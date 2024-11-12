@@ -1,9 +1,19 @@
-import example.pepita
+import Personas.*
 
-describe "group of tests for pepita" {
+describe "grupo de test del planeta" {
+  var juan = new Persona(recursos=150,edad=22)
+  var ana = new Persona(edad=28)
+  var carla = new Persona(recursos=100,edad=22)
+  var ramon = new Persona(recursos=70,edad=65)
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  var muralla1 = new Muralla(longitud = 5)
+  var muralla2 = new Muralla(longitud = 1)
+  var museo = new Museo(superficie=10,indiceImportancia=5)
+
+  var planeta1 = new Planeta(habitantes=[juan,ana,carla,ramon], construcciones=[muralla1,muralla2,museo])
+
+  test "La delegacion diplomatica del planeta1 esta formada por 3 personas" {
+    assert.equals(3, planeta1.delegacionDiplomatica().size())
   }
 
 }
